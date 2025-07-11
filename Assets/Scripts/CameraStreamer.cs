@@ -12,18 +12,18 @@ public class CameraStreamer : MonoBehaviour
 
     private void Start()
     {
-        // Get camera reference
+        // If no camera is assigned in the inspector, use the Camera component on this GameObject
         if (mainCamera == null)
             mainCamera = GetComponent<Camera>();
 
-        // Create the video track directly from the camera
+        // Create the video track directly from the camera feed
         CreateVideoTrack();
     }
 
     private void CreateVideoTrack()
     {
-        // Capture the camera stream as a VideoStreamTrack
-        // Width/height define the resolution of the captured stream
+        // Use Unity.WebRTC's CaptureStreamTrack extension method to create a track
+        // Resolution is set to 1280x720 (HD)
         VideoTrack = mainCamera.CaptureStreamTrack(1280, 720);
 
         Debug.Log("[CameraStreamer] VideoStreamTrack created using CaptureStreamTrack.");
@@ -31,7 +31,7 @@ public class CameraStreamer : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Clean up
+        // Dispose the VideoStreamTrack if it exists
         if (VideoTrack != null)
         {
             VideoTrack.Dispose();
