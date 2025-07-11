@@ -106,6 +106,16 @@ This project implements a fully Unity-based WebRTC solution for streaming camera
 
 ---
 
+## Cardboard VR Support
+
+This project includes support for Google Cardboard, enabling lightweight mobile VR experiences. The Unity scene and camera are configured to work in stereoscopic mode using the XR Management plugin and the Google Cardboard SDK. This makes it possible to stream video and interact with remote peers using simple smartphone-based VR headsets.
+
+Features for Cardboard mode include:
+
+* Compatible camera streaming and rendering in stereoscopic view
+* On-device signaling and WebRTC handling, allowing fully mobile use
+* Input support via screen taps or paired controllers
+
 ## Use Cases
 
 * Local-only WebRTC testing
