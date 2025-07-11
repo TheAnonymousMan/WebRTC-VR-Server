@@ -5,7 +5,7 @@ This Unity project hosts the WebRTC server logic inside a VR environment. It is 
 ## Features
 - Google Cardboard VR support
 - Embedded signaling + media server
-- Sends 3D or 360° views over WebRTC
+- Sends camera view over WebRTC
 - Works on Android smartphones
 
 ## Running
